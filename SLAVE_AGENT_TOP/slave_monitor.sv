@@ -96,7 +96,7 @@ task slave_monitor::collect_data();
                                   		 end
 				end
 		end
-	`uvm_info(get_type_name(),$sformatf("Sampling seqs from DUV \n %s",stxn1.sprint()),UVM_LOW)
+	`uvm_info(get_type_name(),$sformatf("Driving seqs to DUV \n %s",stxn1.sprint()),UVM_LOW)
 
 	s_port.write(stxn1);
 endtask
