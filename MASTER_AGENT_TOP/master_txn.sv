@@ -4,11 +4,11 @@ class master_txn extends uvm_sequence_item;
 
 	rand bit    	wb_we_i;
 	rand bit[4:0]	wb_adr_i;
-	rand int	wb_dat_i;
+	rand int unsigned 	wb_dat_i;
 	     bit	wb_err_o;
 	     bit	wb_int_o;
 		
-	     int	TX0,TX1,TX2,TX3,RX0,RX1,RX2,RX3,DIV,CTRL,SS;
+	     int 	TX0,TX1,TX2,TX3,RX0,RX1,RX2,RX3,DIV,CTRL,SS;
 
 	extern function new(string name="master_txn");
 	extern function void do_print(uvm_printer printer);
@@ -37,4 +37,3 @@ function void master_txn::do_print(uvm_printer printer);
 	printer.print_field("CTRL",this.CTRL,32,UVM_DEC);
 	printer.print_field("SS",this.SS,32,UVM_DEC);
 endfunction
-
