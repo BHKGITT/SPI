@@ -45,6 +45,8 @@ endtask
 
 task master_monitor::collect_data();
 	begin
+		
+		@(vif.master_mon_cb);
 		@(vif.master_mon_cb);
 		while(vif.master_mon_cb.wb_ack_o != 1) //Checking condition until ack=1
 		@(vif.master_mon_cb);
