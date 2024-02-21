@@ -45,7 +45,7 @@ endtask
 
 task master_driver::master_to_spi(master_txn  mtxn);  
 
-	`uvm_info(get_type_name(),$sformatf("Driving seqs to DUV \n %s",mtxn.sprint()),UVM_LOW)
+//	`uvm_info(get_type_name(),$sformatf("Driving seqs to DUV \n %s",mtxn.sprint()),UVM_LOW)
 	@(vif.master_drv_cb);
 	vif.master_drv_cb.wb_we_i  <= mtxn.wb_we_i;
 	vif.master_drv_cb.wb_adr_i <= mtxn.wb_adr_i;
@@ -57,7 +57,9 @@ task master_driver::master_to_spi(master_txn  mtxn);
 	@(vif.master_drv_cb);
 	vif.master_drv_cb.wb_stb_i <= 1'b0;
 	vif.master_drv_cb.wb_cyc_i <= 1'b0;
-	@(vif.master_drv_cb);
-//	`uvm_info(get_type_name(),$sformatf("Driving seqs to DUV \n %s",mtxn.sprint()),UVM_LOW)
+	@(vif.master_drv_cb);	
+//	@(vif.master_drv_cb);
+	//@(vif.master_drv_cb);
+	`uvm_info(get_type_name(),$sformatf("Driving seqs to DUV \n %s",mtxn.sprint()),UVM_LOW)
 endtask
 
