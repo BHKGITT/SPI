@@ -25,6 +25,6 @@ task slave_seq1::body();
 	req=slave_txn::type_id::create("req"); //Creating instance for req
 
 	start_item(req);
-	assert(req.randomize());
+	assert(req.randomize() /*with {miso==23;}*/);
 	finish_item(req);	
 endtask
