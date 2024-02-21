@@ -1,4 +1,5 @@
 ////////////////// SLAVE_DRIVER /////////////////
+
 class slave_driver extends uvm_driver#(slave_txn);
 	`uvm_component_utils(slave_driver)
 //Declare virtual interface handle
@@ -31,7 +32,7 @@ function void slave_driver::build_phase(uvm_phase phase);
 endfunction
 
 function void slave_driver::connect_phase(uvm_phase phase);
-	super.connect_phase(phase);
+//	super.connect_phase(phase);
 	vif=s_cfg.vif;
 endfunction
 
